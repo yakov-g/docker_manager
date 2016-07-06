@@ -58,6 +58,7 @@ class Docker_Manager:
     def container_add(self, container_id):
         cont_id = container_id
         cont_name = None
+        # request short container id and name
         req = "docker ps --filter 'id={}' --format '{{{{.ID}}}} {{{{.Names}}}}'".format(container_id)
         (r, o, e) = request(req)
         if r == 0:
