@@ -191,11 +191,11 @@ def main():
 
     # Handle 'log_file' command line argument for the script
     args_parser = argparse.ArgumentParser()
-    args_parser.add_argument('--log_file', default='.', help="Path to store log files")
+    args_parser.add_argument('--log_path', default='.', help="Path to store log files")
     args = args_parser.parse_args()
 
     # Handle path
-    path = os.path.realpath(args.log_file)
+    path = os.path.realpath(args.log_path)
     if not os.path.exists(path):
         print "Path: '{}' does not exist".format(path)
         exit()
